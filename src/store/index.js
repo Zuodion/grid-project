@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
 import UserModel from '../models/UserModel.js'
+import { getItem, setItem } from '../services/LocalStorage';
 
 Vue.use(Vuex);
 
@@ -10,7 +11,7 @@ const CHANGE_USER_FAVORITE = 'CHANGE_USER_FAVORITE';
 
 const state = {
     users: [],
-    favoriteUsers: localStorage.getItem('favoriteUsers') || []
+    favoriteUsers: getItem('favoriteUsers') || []
 }
 
 const getters = {
@@ -52,10 +53,10 @@ const mutations = {
         user.favorite = favorite
         if (user.favorite) {
             state.favoriteUsers.push(user.name)
-            localStorage.setItem('favoriteUsers', state.favoriteUsers)
+            setItem('favoriteUsers', state.favoriteUsers)
         } else {
             state.favoriteUsers.splice(state.favoriteUsers.indexOf(user.name), 1);
-            localStorage.setItem('favoriteUsers', state.favoriteUsers)
+            setItem('favoriteUsers', state.favoriteUsers)
         }
     }
 }
