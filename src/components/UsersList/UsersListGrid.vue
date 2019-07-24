@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <table>
         <thead>
             <tr>
                 <th
@@ -21,7 +21,7 @@
                 :columns="columns"
             />
         </tbody>
-    </div>
+    </table>
 </template>
 
 <script>
@@ -99,6 +99,9 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
+table {
+    border-spacing: 0;
+}
 th {
     background-color: rgba(120, 120, 120, 0.66);
     color: rgba(0, 0, 0, 0.66);
@@ -109,7 +112,7 @@ th {
     user-select: none;
     min-width: 120px;
     padding: 10px 20px;
-
+    width: 75%;
     &.active {
         color: #999;
         background-color: #333;
