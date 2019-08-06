@@ -10,7 +10,7 @@
 export default {
     name: 'FavoriteUser',
     props: {
-        favorite: Boolean;
+        favorite: Boolean
     }
 }
 
