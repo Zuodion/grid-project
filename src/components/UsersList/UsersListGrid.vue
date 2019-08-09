@@ -15,10 +15,9 @@
         </thead>
         <tbody>
             <UsersListGridItem
-                v-for="(entry, index) in filteredData"
+                v-for="(model, index) in filteredData"
                 :key="index"
-                :model="entry"
-                :columns="columns"
+                :model="model"
             />
         </tbody>
     </table>

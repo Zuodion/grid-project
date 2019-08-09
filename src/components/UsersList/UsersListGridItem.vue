@@ -20,8 +20,7 @@ export default {
     },
     props: {
         model: UserModel,
-        filteredData: Function,
-        columns: Array
+        filteredData: Function
     },
     methods: {
         favorite(user) {
